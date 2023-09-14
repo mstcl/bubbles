@@ -1,4 +1,4 @@
-# Bubbles
+# bubbles
 
 __A skeuomorphic theme for OliveTin__
 
