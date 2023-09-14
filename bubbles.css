@@ -1,0 +1,501 @@
+* {
+  font-family: monospace, "Apple Color Emoji", "Noto Sans Emoji";
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+body {
+  background-color: #d9d9df;
+  color: black;
+  text-align: center;
+  font-family: monospace;
+  padding: 0;
+}
+
+fieldset {
+  padding: 0;
+}
+
+fieldset#root-group {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 1.5em;
+  text-align: center;
+  border: 0;
+  width: 80%;
+  left: 10%;
+  top: 20%;
+  margin: auto;
+}
+
+#sidebar-toggle-wrapper {
+  display: inline;
+}
+
+h1 {
+  display: inline;
+  padding-left: 1em;
+  font-size: small;
+}
+
+label#sidebar-toggler-button {
+  top: 1em;
+  left: 0.5em;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  box-shadow: 0 0 5px 0 #444;
+  color: #666;
+}
+
+label#sidebar-toggler-button:hover,
+label#sidebar-toggler-button:focus {
+  color: black;
+  cursor: pointer;
+}
+
+aside {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 4em;
+  transition: 0.5s ease;
+  background-color: white;
+  border: 0 0 10px 0;
+  box-shadow: 0 0 10px 0 #444;
+}
+
+input:checked ~ aside {
+  left: -250px;
+}
+
+aside ul {
+  padding: 0;
+  margin: 0;
+}
+
+aside ul li {
+  list-style: none;
+  text-align: left;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px inset black;
+}
+
+aside ul li:hover {
+  color: black;
+  background-color: #efefef;
+  cursor: pointer;
+}
+
+table {
+  background-color: white;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 0 5px 0 #444;
+}
+
+th,
+td {
+  border: 1px solid #efefef;
+  text-align: left;
+  padding: 0.6em;
+}
+
+th:first-child {
+  width: 5%;
+}
+
+tr:hover td {
+  background-color: beige;
+}
+
+legend {
+  padding-top: 1em;
+}
+
+span[role="icon"] {
+  display: block;
+  font-size: 3em;
+  vertical-align: middle;
+}
+
+form span[role="icon"],
+tr.log-row span[role="icon"] {
+  display: inline-block;
+  padding-right: 0.2em;
+}
+
+.error {
+  background-color: salmon;
+  padding: 1em;
+}
+
+.title.temporary-status-message {
+  color: gray;
+}
+
+div.entity {
+  background-color: white;
+  box-shadow: 0 0 10px 0 #444;
+  display: grid;
+  grid-column: auto / span 2;
+  grid-row: auto / span 2;
+  grid-template-rows: auto min-content;
+  grid-template-columns: minmax(min-content, auto);
+}
+
+h2 {
+  font-size: 1em;
+  display: inline-block;
+}
+
+div.entity h2 {
+  grid-column: 1 / span all;
+}
+
+/* Buttons */
+
+button,
+input[type="submit"] {
+  padding: 1em;
+  user-select: none;
+  border-radius: 18px;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.1);
+        box-shadow:
+                5px 10px 15px rgba(0,0,0,.05),
+                15px 20px 35px rgba(0,0,0,.1),
+                inset -2px -2px 2px rgba(0,0,0,.1),
+                inset -1px -1px 3px rgba(255,255,255,.6),
+                inset 2px 2px 8px rgba(255,255,255,.2),
+                inset 1px 1px 8px rgba(255,255,255,.2),
+                -6px -6px 26px rgba(255,255,255,.8);
+        background-color: #e9e9ef;
+        margin: auto;
+        left: 0;
+        right: 0;
+        border: 0;
+        transition: .2s ease-out;
+        cursor: pointer;
+
+}
+
+button:focus,
+input[type="submit"]:focus {
+  outline: 1px solid black;
+}
+
+button:disabled,
+input[type="submit"]:disabled {
+  color: gray;
+  background-color: #333;
+  cursor: not-allowed;
+}
+
+button:hover, input[type="submit"] {
+                box-shadow:
+                        4px 4px 6px rgba(0,0,0,.2),
+                        5px 10px 35px rgba(0,0,0,.1),
+                        8px 10px 25px rgba(0,0,0,.1),
+                        inset -1px -1px 9px rgba(0,0,0,.2),
+                        inset -1px -1px 3px rgba(255,255,255,.6),
+                        inset 1px 1px 8px rgba(255,255,255,1),
+                        inset 4px 4px 24px rgba(0,0,0,.15),
+                        0px 0px 15px rgba(255,255,255,.8);
+                transform: 0.1s scale(.98);
+
+}
+
+button:active, button:focus {
+                box-shadow: inset 2px 2px 16px rgba(255,255,255,.9), inset 8px 8px 9px rgba(0,0,0,.2), 5px 10px 5px rgba(0,0,0,.03), -5px -5px 25px rgba(255,255,255,.1), -2px -2px 9px rgba(100,100,100,.1), inset -2px -2px 9px rgba(255,255,255,1);
+                outline: none;
+                background-color: #e5e5ef;
+                text-shadow: -2px -2px 3px rgba(0,0,0,.2), 2px 2px 3px rgba(255,255,255,1);
+                transform: 0.1s translateY(3px);
+}
+
+fieldset#section-switcher {
+  border: 0;
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+fieldset#section-switcher button {
+  padding: 1em;
+  color: black;
+  display: table-cell;
+  text-align: center;
+  border: 1px solid #999;
+  background-color: white;
+  box-shadow: 0 0 6px 0 #aaa;
+  user-select: none;
+  cursor: pointer;
+}
+
+fieldset#root-group action-button button {
+  width: 100%;
+  height: 100%;
+}
+
+fieldset#section-switcher button:first-child {
+  border-radius: 1em 0 0 1em;
+}
+
+fieldset#section-switcher button:last-child {
+  border-radius: 0 1em 1em 0;
+}
+
+button.active-section {
+  font-weight: bold;
+}
+
+/* Button animations */
+
+.action-failed {
+  animation: kf-action-failed 1s;
+}
+
+@keyframes kf-action-failed {
+  0% { background-color: black; }
+  20% { background-color: red; }
+  0% { background-color: inherit; }
+}
+
+.action-success {
+  animation: kf-action-success 1s;
+}
+
+@keyframes kf-action-success {
+  0% { background-color: black; }
+  20% { background-color: limegreen; }
+  0% { background-color: inherit; }
+}
+
+.action-nonzero-exit {
+  animation: kf-action-nonzero-exit 1s;
+}
+
+@keyframes kf-action-nonzero-exit {
+  0% { background-color: black; }
+  20% { background-color: orange; }
+  0% { background-color: inherit; }
+}
+
+.action-timeout {
+  animation: kf-action-timeout 1s;
+}
+
+@keyframes kf-action-timeout {
+  0% { background-color: black; }
+  20% { background-color: cyan; }
+  0% { background-color: inherit; }
+}
+
+footer,
+footer a {
+  color: black;
+}
+
+img.logo {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+@media (max-width: 620px) {
+  fieldset {
+    grid-template-columns: auto;
+    grid-gap: 0;
+    padding: 0;
+  }
+  fieldset#root-group {
+    top: 5%;
+    padding-bottom: 5%
+  }
+}
+
+main {
+  /*! padding: 1em; */
+}
+
+summary {
+  cursor: pointer;
+}
+
+details {
+  display: inline-block;
+}
+
+details[open] {
+  margin-top: 1em;
+  display: block;
+}
+
+form.action-arguments {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #d9d9df;
+}
+
+form div.wrapper {
+  text-align: left;
+  padding: 1em;
+  border-radius: 18px;
+  margin: auto;
+  left: 35%;
+  top: 30%;
+  min-width: 30%;
+  position: absolute;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.1);
+        box-shadow:
+                5px 10px 15px rgba(0,0,0,.05),
+                15px 20px 35px rgba(0,0,0,.1),
+                inset -2px -2px 2px rgba(0,0,0,.1),
+                inset -1px -1px 3px rgba(255,255,255,.6),
+                inset 2px 2px 8px rgba(255,255,255,.2),
+                inset 1px 1px 8px rgba(255,255,255,.2),
+                -6px -6px 26px rgba(255,255,255,.8);
+        background-color: #e9e9ef;
+}
+
+label {
+  width: 20%;
+  text-align: right;
+  display: inline-block;
+  padding-right: 1em;
+}
+
+#perma-widget {
+  position: absolute;
+  z-index: 2;
+}
+
+#perma-widget label {
+  display: inline;
+}
+
+input {
+  padding: 0.6em;
+}
+
+input:invalid {
+  outline: 2px solid red;
+}
+
+form .wrapper span.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+form input[type="submit"]:first-child {
+  margin-right: 1em;
+}
+
+button[name="cancel"]:hover {
+  background-color: salmon;
+}
+
+input[name="start"]:hover {
+  background-color: #aceaac;
+}
+
+span.argument-description {
+  margin-left: 1em;
+}
+
+form div.buttons {
+  text-align: right;
+}
+
+pre {
+  border: 1px solid gray;
+  padding: 1em;
+  min-height: 1em;
+}
+
+td.exit-code {
+  text-align: center;
+}
+
+input.invalid {
+  background-color: salmon;
+}
+
+#available-version {
+  background-color: #aceaac;
+  padding: 0.2em;
+  border-radius: 1em;
+}
+
+span.tag {
+  background-color: lightgray;
+  border-radius: 0.6em;
+  padding: 0.2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: white;
+  }
+
+  form.action-arguments {
+    background-color: #333;
+  }
+
+  form div.wrapper {
+    background-color: #222;
+
+  }
+
+  button,
+  input[type="submit"] {
+    border: 1px solid #666;
+    background-color: #222;
+    box-shadow: 0 0 6px 0 #444;
+    color: white;
+  }
+
+  button:disabled {
+    background-color: black;
+  }
+
+  table,
+  td,
+  th {
+    border: 1px solid gray;
+  }
+
+  td,
+  tr {
+    background-color: #222;
+    color: white;
+  }
+
+  tr:hover td {
+    background-color: #666;
+  }
+
+  footer,
+  footer a {
+    color: gray;
+  }
+}
